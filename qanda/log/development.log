@@ -478,3 +478,41 @@ Processing by QuestionsController#show as HTML
 Completed 200 OK in 44ms (Views: 35.6ms | ActiveRecord: 0.2ms | Allocations: 4833)
 
 
+Started GET "/questions/2" for 127.0.0.1 at 2022-07-06 00:25:39 +0900
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/kuzubatomohiko/all_data/10_Engineering/Ruby/Rails-QA-App/qanda/app/controllers/questions_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+...= Question.find(params[:id])　#データを取り出す
+...                            ^~~
+):
+  
+app/controllers/questions_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/questions_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/questions_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/questions/2" for 127.0.0.1 at 2022-07-06 00:27:32 +0900
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 239)
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 36849)
+Completed 200 OK in 135ms (Views: 103.3ms | ActiveRecord: 1.7ms | Allocations: 50114)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2022-07-06 00:29:02 +0900
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 3143)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 1.4ms | Allocations: 4950)
+
+

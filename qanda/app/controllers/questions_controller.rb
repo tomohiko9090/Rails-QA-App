@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
 
   # 2. 質問詳細ページ表示
   def show
-    @question = Question.find(params[:id])　#データを取り出す
+    @question = Question.find(params[:id]) #データを取り出す
     p @question
   end
 
